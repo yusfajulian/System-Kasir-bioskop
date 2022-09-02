@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35C0D70A-C19E-4E33-8A5A-D480531FD59A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bioskop</RootNamespace>
+    <AssemblyName>Bioskop</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.2.0.0\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\Laporand.cs" />
+    <Compile Include="Controller\DataPembayaran.cs" />
+    <Compile Include="Controller\Film.cs" />
+    <Compile Include="Controller\Jadwal.cs" />
+    <Compile Include="Controller\DataTiket.cs" />
+    <Compile Include="Controller\Transaksi.cs" />
+    <Compile Include="Jadwal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Jadwal.Designer.cs">
+      <DependentUpon>Jadwal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DaftarTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DaftarTransaksi.Designer.cs">
+      <DependentUpon>DaftarTransaksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengolahanData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PengolahanData.Designer.cs">
+      <DependentUpon>PengolahanData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laporan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laporan.Designer.cs">
+      <DependentUpon>Laporan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Koneksi.cs" />
+    <Compile Include="Pembayaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pembayaran.Designer.cs">
+      <DependentUpon>Pembayaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PemesananTiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PemesananTiket.Designer.cs">
+      <DependentUpon>PemesananTiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Film.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Film.Designer.cs">
+      <DependentUpon>Film.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tiket.Designer.cs">
+      <DependentUpon>Tiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utama.Designer.cs">
+      <DependentUpon>Utama.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Jadwal.resx">
+      <DependentUpon>Jadwal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DaftarTransaksi.resx">
+      <DependentUpon>DaftarTransaksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengolahanData.resx">
+      <DependentUpon>PengolahanData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laporan.resx">
+      <DependentUpon>Laporan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pembayaran.resx">
+      <DependentUpon>Pembayaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PemesananTiket.resx">
+      <DependentUpon>PemesananTiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Film.resx">
+      <DependentUpon>Film.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tiket.resx">
+      <DependentUpon>Tiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utama.resx">
+      <DependentUpon>Utama.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Bioskop.Controller.Film.datasource" />
+    <None Include="Properties\DataSources\Bioskop.Controller.Transaksi.datasource" />
+    <None Include="Properties\DataSources\Bioskop.Model.Koneksi.datasource" />
+    <None Include="Properties\DataSources\Bioskop.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Bioskop.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\DaftarFilm.datasource" />
+    <None Include="Properties\DataSources\DaftarJadwal.datasource" />
+    <None Include="Properties\DataSources\DaftarTransaksi.datasource" />
+    <None Include="Properties\DataSources\Home.datasource" />
+    <None Include="Properties\DataSources\Laporan.datasource" />
+    <None Include="Properties\DataSources\Login.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.Authentication.AuthenticationPlugins.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.Authentication.IAuthenticationPlugin.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.Logging.ConsoleLoggerProvider.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.Logging.IMySqlConnectorLogger.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.Logging.IMySqlConnectorLoggerProvider.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.Logging.MySqlConnectorLogManager.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.Logging.NoOpLogger.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.Logging.NoOpLoggerProvider.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlBatch.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlBatchCommand.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlBatchCommandCollection.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlBulkCopy.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlBulkCopyColumnMapping.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlBulkCopyResult.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlBulkLoader.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlCommand.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlCommandBuilder.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlConnection.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlConnectionStringBuilder.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlConnectorFactory.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlConversionException.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlDataAdapter.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlDataReader.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlDateTime.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlDbColumn.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlError.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlException.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlGeometry.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlHelper.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlInfoMessageEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlInfoMessageEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlParameter.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlParameterCollection.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlProtocolException.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlProvidePasswordContext.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlRowsCopiedEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlRowsCopiedEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlRowUpdatedEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlRowUpdatedEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlRowUpdatingEventArgs.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlRowUpdatingEventHandler.datasource" />
+    <None Include="Properties\DataSources\MySqlConnector.MySqlTransaction.datasource" />
+    <None Include="Properties\DataSources\Pembayaran.datasource" />
+    <None Include="Properties\DataSources\Pemesanan_Tiket.datasource" />
+    <None Include="Properties\DataSources\PengolahanData.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\TambahFilm.datasource" />
+    <None Include="Properties\DataSources\Tentang.datasource" />
+    <None Include="Properties\DataSources\UpdateFilm.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
